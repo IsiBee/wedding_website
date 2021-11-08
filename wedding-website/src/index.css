@@ -9,7 +9,7 @@ main {
   --secondary: #ffc507;
   --tertiary: #B12704;
   --light: #f8f5fa;
-  --dark: #4c4258;
+  --dark: #484649;
   --darker: #111111;
   --error: rgb(250, 56, 8);
 
@@ -36,48 +36,40 @@ body {
 
 }
 
+.container {
+  background-color: #484649cc;
+  border-radius: 15px;
+}
+
 a:hover {
-  text-decoration: underline;
   color: var(--secondary);
 }
 
 header {
-  background: var(--dark);
+  background-color: #f8f5fac0;
 }
 
 header a {
-  color: var(--light);
+  color: var(--primary);
 }
 
-button {
-  font-size: 1rem;
-  text-decoration: none;
-  padding: 0.25rem 1rem;
-  border-radius: .5rem;
-  border: none;
-  outline: none;
-  cursor: pointer;
-  margin: 0 1px;
-  background-color: var(--secondary);
+a {
+	border-radius: 5px;
+	color: var(--primary);
+	font-weight: 600;
+	padding: 2px 4px;
+	margin-left: -2px;
+	margin-right: -2px;
 }
 
 button:hover {
-  opacity: .8;
+  opacity: .9;
+
 }
 
 button[disabled] {
   cursor: default;
   opacity: .8;
-}
-
-img {
-  max-width: 75%;
-  max-height: 60%;
-}
-
-.project-image:hover{
-  opacity: .6;
-  
 }
 
 span[role="img"] {
@@ -104,15 +96,6 @@ input:focus {
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
-
-nav a:hover {
-  text-decoration: none;
-}
-
-nav  li {
-  cursor: pointer;
-}
-
 textarea {
 	width: 600px;
 	height: 120px;
@@ -120,26 +103,11 @@ textarea {
 	padding: 5px;
 }
 
-.container {
-  width: 85%;
-  max-width: 1200px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-.img-thumbnail {
-  width: auto;
-  height: 300px;
-  margin-bottom: 50px;
-  cursor: pointer;
-}
-
-
 button {
 	background: var(--primary);
 	border: 0;
 	border-radius: 5px;
-	color:var(--dark);
+	color:var(--secondary);
 	cursor: pointer;
 	font-size: 16px;
 	font-weight: 600;
@@ -147,31 +115,8 @@ button {
 	padding: 10px 15px;	
 }
 
-a {
-	border-radius: 5px;
-	color: var(--primary);
-	font-weight: 600;
-	padding: 2px 4px;
-	margin-left: -2px;
-	margin-right: -2px;
-	
-}
-
 .error-text{
   color: var(--error);
-}
-
-.github {
-font-size: 30px;
-color: var(--light);
-}
-
-.title{
-  font-size: 45px;
-}
-
-.project-title{
-  font-size: 20px;
 }
 
 footer {
@@ -181,11 +126,5 @@ footer {
     display: flex;
     justify-content: center;
     padding: 1%;
-    font-size: 50px;
-    
-}
-
-footer a {
-  padding-left: 30px;
-  color: var(--light);
+    font-size: 50px;  
 }
