@@ -104,7 +104,7 @@ textarea {
 }
 
 button {
-	background: var(--primary);
+	background: var(--tertiary);
 	border: 0;
 	border-radius: 5px;
 	color:var(--secondary);
