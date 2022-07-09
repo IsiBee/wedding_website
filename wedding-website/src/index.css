@@ -1,17 +1,17 @@
-
 main {
-	margin: 0 auto;
-	max-width: 90%;
+  margin: 0 auto;
+  max-width: 90%;
   padding: 50px 30px;
 }
+
 :root {
-  --primary: #01411c;
-  --secondary: #ffc507;
-  --tertiary: #B12704;
-  --light: #f8f5fa;
-  --dark: #484649;
+  --primary: #0A2342;
+  --secondary: #F0C175;
+  --tertiary: #C6D8D3;
+  --light: #FDF0D5;
+  --dark: #808377;
   --darker: #111111;
-  --error: rgb(250, 56, 8);
+  --error: rgb(123, 2, 2);
 
 }
 
@@ -37,7 +37,7 @@ body {
 }
 
 .container {
-  background-color: #484649cc;
+  background-color: var(--dark);
   border-radius: 15px;
 }
 
@@ -54,12 +54,12 @@ header a {
 }
 
 a {
-	border-radius: 5px;
-	color: var(--primary);
-	font-weight: 600;
-	padding: 2px 4px;
-	margin-left: -2px;
-	margin-right: -2px;
+  border-radius: 5px;
+  color: var(--primary);
+  font-weight: 600;
+  padding: 2px 4px;
+  margin-left: -2px;
+  margin-right: -2px;
 }
 
 button:hover {
@@ -84,11 +84,12 @@ form {
 input {
   font-size: 1rem;
   padding: 0.25rem;
-  border: 1px solid var(--dark);
+  border: 1px solid var(--primary);
   outline: none;
-  border-radius: 3px;
+  border-radius: 8px;
   transition: box-shadow 0.2s;
   width: 400px;
+  height: 40px;
 }
 
 input:focus {
@@ -97,34 +98,39 @@ input:focus {
 }
 
 textarea {
-	width: 600px;
-	height: 120px;
-	border: 3px solid #cccccc;
-	padding: 5px;
+  width: 600px;
+  height: 120px;
+  border: 3px solid #cccccc;
+  padding: 5px;
 }
 
 button {
-	background: var(--tertiary);
-	border: 0;
-	border-radius: 5px;
-	color:var(--secondary);
-	cursor: pointer;
-	font-size: 16px;
-	font-weight: 600;
-	margin-bottom: 30px;
-	padding: 10px 15px;	
+  background: var(--primary);
+  border: 0;
+  border-radius: 5px;
+  color: var(--light);
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 30px;
+  padding: 10px 15px;
 }
 
-.error-text{
+.radiobuttons {
+  background-color: var(--light);
+}
+
+.error-text {
   color: var(--error);
+  font-size: smaller;
 }
 
 footer {
-    border-top: 1px solid var(--darker);
-    width: 100%;
-    bottom: 0;
-    display: flex;
-    justify-content: center;
-    padding: 1%;
-    font-size: 50px;  
+  border-top: 1px solid var(--darker);
+  width: 100%;
+  bottom: 0;
+  display: flex;
+  justify-content: center;
+  padding: 1%;
+  font-size: 50px;
 }

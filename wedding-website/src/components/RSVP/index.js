@@ -1,35 +1,36 @@
 import React, { useState } from 'react';
-import { validateEmail } from '../../utils/helper.js';
 
 
 
 function RSVPForm() {
-    const [formState, setFormState] = useState({ invitationID: '', name: '', email: '', message: '' });
-    const { invitationID, name, email, message } = formState;
+    const [formState, setFormState] = useState({ invitationID: '', response: '' });
+    const { invitationID, response } = formState;
+    const [checked, setChecked] = useState("Yes");
     const [errorMessage, setErrorMessage] = useState('');
 
     function handleChange(e) {
-        if (e.target.name === 'email') {
-            const isValid = validateEmail(e.target.value);
-            console.log(isValid);
-            if (!isValid) {
-                setErrorMessage('Your email is invalid.');
-            } else {
-                setErrorMessage('');
-            }
-        }
-        else {
-            if (!e.target.value.length) {
-                setErrorMessage(`Your ${e.target.name} is required.`);
-            } else {
-                setErrorMessage('');
-            }
+        if (!e.target.value.length) {
+            setErrorMessage(`Your ${e.target.name} is required to proceed.`);
+        } else {
+            setErrorMessage('');
         }
         if (!errorMessage) {
             setFormState({ ...formState, [e.target.name]: e.target.value })
         }
 
     }
+
+    function handleAttendanceChange(event) {
+        setChecked(() => {
+            return {
+                Yes: false,
+                No: false,
+                [event.target.value]: true
+            };
+        });
+
+    }
+
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -44,17 +45,14 @@ function RSVPForm() {
                     <label htmlFor="invitationID">Enter Invitation ID:</label>
                     <input type="text" name="invitation ID" onBlur={handleChange} defaultValue={invitationID} />
                 </div>
-                <div className="py-2">
-                    <label htmlFor="name">Name:</label>
-                    <input type="text" name="name" onBlur={handleChange} defaultValue={name} />
+                <div>
+                    <label htmlFor="response">Will you be attending?</label>
                 </div>
-                <div className="py-2">
-                    <label htmlFor="email">Email address:</label>
-                    <input type="email" name="email" onBlur={handleChange} defaultValue={email} />
-                </div>
-                <div className="py-2">
-                    <label htmlFor="message">Message:</label>
-                    <textarea name="message" rows="5" onBlur={handleChange} defaultValue={message} />
+                <div className="py-2, radio-buttons">
+                    <label>Yes</label>
+                    <input type="radio" value="Yes" name="response-yes" checked={checked.Yes} onChange={handleAttendanceChange} />
+                    <label>No</label>
+                    <input type="radio" value="No" name="response-no" checked={checked.No} onChange={handleAttendanceChange} />
                 </div>
                 {errorMessage && (
                     <div className="py-1">
@@ -63,7 +61,7 @@ function RSVPForm() {
                 )}
                 <button data-testid="contact-button" type="submit">Submit</button>
             </form>
-        </section>
+        </section >
     )
 
 }
