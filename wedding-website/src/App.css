@@ -1,13 +1,3 @@
 #root {
-  /* background-image: url("./assets/images/Sunflower-garland.jpeg");*/
-  /*background-size: cover;*/
-  width: 100%;
-  height: 100%;
-  background-color: #C6D8D3;
-
-
-  /* allows background image to take up full screen */
-  position: fixed;
-  top: 0;
-  left: 0;
+  background-color: #808370;
 }

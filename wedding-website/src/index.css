@@ -1,17 +1,16 @@
 main {
   margin: 0 auto;
-  max-width: 90%;
-  padding: 50px 30px;
+  padding: 20px 20px;
 }
 
 :root {
-  --primary: #0A2342;
-  --secondary: #F0C175;
-  --tertiary: #C6D8D3;
-  --light: #FDF0D5;
-  --dark: #808377;
-  --darker: #111111;
-  --error: rgb(123, 2, 2);
+  --IBprimary: #0A2342;
+  --IBsecondary: #F0C175;
+  --IBtertiary: #DDDBB7;
+  --IBlight: #FFFAEF;
+  --IBdark: #808370;
+  --IBdarker: #111111;
+  --IBerror: rgb(123, 2, 2);
 
 }
 
@@ -19,10 +18,6 @@ main {
   box-sizing: border-box;
 }
 
-html,
-body {
-  min-height: 100%;
-}
 
 body {
   margin: 0;
@@ -31,35 +26,27 @@ body {
   line-height: 1.5;
   font-size: 18px;
   letter-spacing: .1em;
-  background: var(--dark);
-  color: var(--light);
+  background: var(--IBdark);
+  color: var(--IBtertiary);
 
 }
 
 .container {
-  background-color: var(--dark);
+  background-color: var(--IBdark);
   border-radius: 15px;
 }
 
-a:hover {
-  color: var(--secondary);
+.nav-link:hover {
+  color: var(--IBsecondary);
 }
 
 header {
-  background-color: #f8f5fac0;
+  background-color: var(--IBdark);
 }
 
-header a {
-  color: var(--primary);
-}
-
-a {
-  border-radius: 5px;
-  color: var(--primary);
-  font-weight: 600;
-  padding: 2px 4px;
-  margin-left: -2px;
-  margin-right: -2px;
+.nav-link,
+.nav-item {
+  color: var(--IBlight);
 }
 
 button:hover {
@@ -76,6 +63,12 @@ span[role="img"] {
   cursor: default;
 }
 
+img {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
 form {
   width: 40%;
   padding: 5px;
@@ -84,7 +77,7 @@ form {
 input {
   font-size: 1rem;
   padding: 0.25rem;
-  border: 1px solid var(--primary);
+  border: 1px solid var(--IBprimary);
   outline: none;
   border-radius: 8px;
   transition: box-shadow 0.2s;
@@ -93,7 +86,7 @@ input {
 }
 
 input:focus {
-  border: 1px solid var(--secondary);
+  border: 1px solid var(--IBsecondary);
   box-shadow: 0 0 .25rem rgba(0, 0, 0, .5);
 }
 
@@ -105,10 +98,10 @@ textarea {
 }
 
 button {
-  background: var(--primary);
+  background: var(--IBprimary);
   border: 0;
   border-radius: 5px;
-  color: var(--light);
+  color: var(--IBlight);
   cursor: pointer;
   font-size: 16px;
   font-weight: 600;
@@ -117,16 +110,16 @@ button {
 }
 
 .radiobuttons {
-  background-color: var(--light);
+  background-color: var(--IBlight);
 }
 
 .error-text {
-  color: var(--error);
+  color: var(--IBerror);
   font-size: smaller;
 }
 
 footer {
-  border-top: 1px solid var(--darker);
+  border-top: 1px solid var(--IBdarker);
   width: 100%;
   bottom: 0;
   display: flex;
